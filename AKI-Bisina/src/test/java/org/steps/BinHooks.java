@@ -17,7 +17,7 @@ import io.cucumber.java.Scenario;
 public class BinHooks extends Ultilityclass {
 	
 
-	
+	System.out.println("Entry");
 	@Before
 	public void Start() {
 
