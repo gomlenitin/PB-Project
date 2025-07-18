@@ -135,7 +135,7 @@ public void user_navigate_from_PDP_page_to_cart_page() {
 	  WebElement PDPrate2 = a.getPDPrateproduct2();
 	  String pdprate2 = PDPrate2.getText();  
 	  String pdprate3 = pdprate2.substring(4);
-	  
+
 	  ClickElement(a.getQtyselection());
       Threadsleep(3000);
 	  javascriptclick(a.getAddcart());

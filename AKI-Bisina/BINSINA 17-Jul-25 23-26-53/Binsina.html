@@ -1,305 +1,142 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.tablesorter.min.js"></script>
-<script src="js/Chart.min.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
-<link rel="stylesheet" href="css/font-awesome.min.css"/>
-<link rel="shortcut icon" href="images/favicon.png"/>
-
-<script>
-$(document).ready(function() {
-    // this will tell tablesorter to try looking for the data-value attribute
-    // if present, it'll sort by that instead
-    // otherwise, it'll sort by the text content of the table cell
-    $("#tablesorter").tablesorter({
-        textAttribute: 'data-value',
-        // ignores the first row of the header, the 'scenario', 'steps', since
-        // sorting those doesn't make sense
-        selectorHeaders: '> thead tr:not(.dont-sort) th',
-        // use a stable sort
-        sortStable: true
-    });
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<title>Cucumber Reports  - Tag: @E2E</title>
-
-</head>
-<body>
-
-<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <p class="navbar-text navbar-left">Cucumber Report</p>
-      <ul class="nav navbar-nav navbar-right">
-        <li role="presentation" ><a href="overview-features.html">Features</a></li>
-        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
-        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
-        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<div class="container-fluid">
-  <div class="col-md-5 col-md-offset-1">
-
-<table class="table table-bordered" id="build-info">
-  <thead>
-    <tr>
-      <th>Project</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="info">
-      <td>Binsina</td>
-      <td>17 Jul 2025, 23:27</td>
-    </tr>
-  </tbody>
-</table>
-
-  </div>
-  <div class="col-md-3 col-md-offset-2">
-  </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent Binsina</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
 </div>
-
-
-<div id="report-lead" class="container-fluid">
-  <div class="col-md-10 col-md-offset-1">
-    <h2>Tag Report</h2>
-  </div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Binsina Automation</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 17, 2025 11:26:53 PM</span></a>
+</li>
+</ul>
 </div>
-
-
-<div class="container-fluid" id="report">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <table class="stats-table">
-
-
-<thead>
-  <tr class="header dont-sort">
-      <th></th>
-    <th colspan="6">Steps</th>
-    <th colspan="3">Scenarios</th>
-    <th colspan="2">Features</th>
-  </tr>
-  <tr>
-    <th>Tag</th>
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="skipped">Skipped</th>
-    <th class="pending">Pending</th>
-    <th class="undefined">Undefined</th>
-    <th class="total">Total</th>
-
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="total">Total</th>
-
-    <th>Duration</th>
-    <th>Status</th>
-  </tr>
-</thead>
-
-
-        <tbody>
-        <tr>
-          <td class="tagname">@E2E</td>
-          <td      class="passed"    >1</td>
-          <td      class="failed"    >1</td>
-          <td     class="skipped"   >4</td>
-          <td >0</td>
-          <td >0</td>
-          <td class="total">6</td>
-
-          <td >0</td>
-          <td  class="failed"    >1</td>
-          <td class="total">1</td>
-
-          <td class="duration" data-value="7438000000">7.438</td>
-          <td class="failed">Failed</td>
-        </tr>
-        </tbody>
-
-      </table>
-    </div>
-  </div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
 </div>
-
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1 col-md-offset-10">
-      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
-      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid" id="report">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="elements">
-
-
-<div class="element">
-    <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_250729160.html">To be Verify the E2E Functionality</a>
-    </div>
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_2149458199.html">@E2E</a>
-       <a href="report-tag_4090000799.html">@test2</a>
-</div>
-
-
-  <span class="lead-duration duration">7.438</span>
-
-
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
-
-<div class="brief failed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">To Validate  the  online payemt method using different cards sample data</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-1" class="collapse collapsable-details  in ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-2" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">org.steps.BinHooks.Start()</span>
-
-  <span class="lead-duration duration">26.970</span>
-
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@E2E</a><a class="dropdown-item" href="#">@test2</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">To be Verify the E2E Functionality</p>
+            <p class="text-sm">
+              <span>11:26:54 PM</span> / <span>00:00:34:650</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
           </div>
-
-
-
-
-
-
-
-        </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">To be Verify the E2E Functionality</h5>
+<span class='badge badge-success'>07.17.2025 11:26:54 PM</span>
+<span class='badge badge-danger'>07.17.2025 11:27:28 PM</span>
+<span class='badge badge-default'>00:00:34:650</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>To Validate  the  online payemt method using different cards sample data</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
     </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
-
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">User open the Home page</span>
-
-  <span class="lead-duration duration">0.041</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="org.steps.BinSteps.user_open_the_Home_page()">
+                <span>Given User open the Home page</span>
+      <div>
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-When failed">
-  <span class="keyword indention">When</span>
-  <span class="name">user select the main Category to sub category option from Home page</span>
-
-  <span class="lead-duration duration">7.397</span>
-
-</div>
-
-
-
-
-
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>org.openqa.selenium.json.JsonException:</a>
-      </div>
-      <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+              </div>
+              <div class="step fail-bg" title="org.steps.BinSteps.user_select_the_main_category_to_sub_category_option_from_home_page()">
+                <span>When user select the main Category to sub category option from Home page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_381'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -339,7 +176,7 @@ Session ID: 9744dcb7e43554ade57ea7b909379d4d
 	at org.openqa.selenium.interactions.Actions.perform(Actions.java:536)
 	at org.base.Ultilityclass.actionClick(Ultilityclass.java:293)
 	at org.steps.BinSteps.user_select_the_main_category_to_sub_category_option_from_home_page(BinSteps.java:394)
-	at &#10045;.user select the main Category to sub category option from Home page(file:///E:/MOHAN/PB-Project/AKI-Bisina/src/test/resources/Feature/E2E.feature:20)
+	at ✽.user select the main Category to sub category option from Home page(file:///E:/MOHAN/PB-Project/AKI-Bisina/src/test/resources/Feature/E2E.feature:20)
 	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
 Build info: version: '4.8.2', revision: '826dbfc730'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_381'
@@ -477,7 +314,7 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@class='title'])[78]&quot;}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='title'])[78]"}
   (Session info: chrome=138.0.7204.101)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.2', revision: '826dbfc730'
@@ -509,219 +346,379 @@ Session ID: 9744dcb7e43554ade57ea7b909379d4d
 	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:73)
 	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:82)
 	... 78 more
-</pre>
+</textarea>
+      
       </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+              <div class="step skip-bg" title="org.steps.BinSteps.user_select_the_anyone_product_from_pdp_page_to_cart_page()">
+                <span>And User select the anyone product from  PDP page to cart page</span>
+      <div>Step skipped
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">User select the anyone product from  PDP page to cart page</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+              <div class="step skip-bg" title="org.steps.BinSteps.go_to_the_checkout_page_if_already_register_detail_navigate_to_payment_page()">
+                <span>And Go to the checkout page.If,already register detail navigate to payment page</span>
+      <div>Step skipped
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">Go to the checkout page.If,already register detail navigate to payment page</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+              <div class="step skip-bg" title="org.steps.BinSteps.user_select_the_different_card_payment_option_and_click_on_the_place_order()">
+                <span>And User select the different card payment option and click on the place order</span>
+      <div>Step skipped
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">User select the different card payment option and click on the place order</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+              <div class="step skip-bg" title="org.steps.BinSteps.observe_the_order_flow_if_payment_failure()">
+                <span>Then Observe the order flow.If,payment failure</span>
+      <div>Step skipped
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">Observe the order flow.If,payment failure</span>
-
-  <span class="lead-duration duration">0.000</span>
-
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>org.steps.BinHooks.End(io.cucumber.java.Scenario)</span>
+      <div>To Validate  the  online payemt method using different cards sample data
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../../screenshot/embedded1.png' src="../../screenshot/embedded1.png">
+    
+    </div></div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <div>
       </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-5" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">org.steps.BinHooks.End(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">0.194</span>
-
+              </div>
           </div>
-
-
-
-
-
-
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
-      <a>To Validate  the  online payemt method using different cards sample data</a>
-      <a href="embeddings/embedding_1643271795.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-6" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_1643271795.png">
-      </div>
-    </div>
-  </div>
-  </div>
-
         </div>
-    </div>
-  </div>
-
   </div>
 </div>
-
-
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.json.JsonException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.json.JsonException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:27:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='5'>When user select the main Category to sub category option from Home page</a>
+<div class="">
+<span class="badge badge-default">To be Verify the E2E Functionality.To Validate the online payemt method using different cards sample data.When user select the main Category to sub category option from Home page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@E2E</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@E2E</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:26:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>To Validate the online payemt method using different cards sample data</a>
+<div class="">
+<span class="badge badge-default">To be Verify the E2E Functionality.To Validate the online payemt method using different cards sample data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@test2</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@test2</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:26:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>To Validate the online payemt method using different cards sample data</a>
+<div class="">
+<span class="badge badge-default">To be Verify the E2E Functionality.To Validate the online payemt method using different cards sample data</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 17, 2025 11:26:53 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 17, 2025 11:27:28 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='100%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='28%'><b>2</b> steps passed</small></div>
+<div>
+<small data-tooltip='14%'><b>1</b> steps failed,
+<b>4</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"To be Verify the E2E Functionality":34.65
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@E2E</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@test2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Enviroment</td>
+<td>Staging</td>
+</tr>
+<tr>
+<td>Dept</td>
+<td>QA</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Binsina</td>
+</tr>
+<tr>
+<td>Os</td>
+<td>Linux</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 2,
+failGrandChild: 1,
+warningGrandChild: 0,
+skipGrandChild: 4,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1 col-md-offset-10">
-      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
-      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
-    </div>
-  </div>
-</div>
-
-<br/>
-
-<nav class="navbar navbar-default" id="footer">
-  <div class="container-fluid">
-    <p class="navbar-text navbar-right">
-        <small>generate Cucumber HTML reports via:&nbsp;</small>
-        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
-        &nbsp;&nbsp;
-    </p>
-  </div>
-</nav>
-
-</body>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
 </html>
