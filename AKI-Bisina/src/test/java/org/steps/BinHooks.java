@@ -22,7 +22,7 @@ public class BinHooks extends Ultilityclass {
 	public void Start() {
 
 		launchBrowser(1);
-		launchurl("https://mcstaging.binsina.ae");
+		launchurl("");
 		pagemaximize();
 	   
 		
